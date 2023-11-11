@@ -1,13 +1,14 @@
 from datetime import datetime, timedelta, timezone
 import os
 import time
+import platform
 
-
+os.system('cls')
 if os.name == 'nt':
     print('Система Windows')
 print('ID Программы:', os.getpid())
 
-q = input('\nВыберете функцию :\n 1 - АвтоВремя\n')
+q = input('\nВыберете функцию :\n 1 - АвтоВремя\n 2 - О системе \n ---> ')
 
 def NowTime():
     while True:
@@ -27,3 +28,14 @@ if q == '1':
     clear_console()
     NowTime()
     print("'Напишите 'выйти' шо бы завершить цикл'")
+elif q == '2':
+    os.system('cls')
+    print('Ращрядность :' , platform.machine())
+    print('Версия системы: ', platform.version())
+    print('Версия платформы :' , platform.platform())
+    print('Краткая сводка :', platform.uname())
+    print('Операционная система :' ,platform.system())
+    print('Процессор :' ,platform.processor())
+    print('Имя компьютера :', platform.node())
+    print('ОС системы :', platform.system())
+    input()
